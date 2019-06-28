@@ -34,3 +34,26 @@ class Triangle extends Polygon {
         };
     };
 };
+
+class Square extends Polygon {
+    get isValid() {
+        if (this.countSides !== 4) {
+            return false;
+        } else {
+            let valid = true;
+            this.sides.reduce( (lastSide, side) => {
+                if (side !== lastSide) {
+                    valid = false;
+                };
+                return side;
+            });
+            return valid;
+        };
+    };
+
+    get area() {
+        if (this.isValid) {
+            return this.sides[0] ** 2;
+        };
+    };
+};
