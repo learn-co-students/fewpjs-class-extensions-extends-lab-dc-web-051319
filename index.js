@@ -14,6 +14,7 @@ class Polygon{
 
 class Triangle extends Polygon{
   get isValid(){
+  if (this.countSides === 3){
     if (this.arrayOfSides[0] + this.arrayOfSides[1] > this.arrayOfSides[2] &&
     this.arrayOfSides[0] + this.arrayOfSides[2] > this.arrayOfSides[1] &&
     this.arrayOfSides[1] + this.arrayOfSides[2] > this.arrayOfSides[0]) {
@@ -22,10 +23,11 @@ class Triangle extends Polygon{
     return false
     }
   }
+  }
 }
 
 class Square extends Polygon{
   get isValid(){
-    
+
   }
 }
