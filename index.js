@@ -27,7 +27,22 @@ class Triangle extends Polygon{
 }
 
 class Square extends Polygon{
-  get isValid(){
+  get area(){
+    let unique = [...new Set(this.arrayOfSides)];
+    if (unique.length === 2){
+      return unique[0] * unique[1]
+    } else {
+      return unique[0] * unique[0]
+    }
+  }
 
+  get isValid(){
+    //makes an array of unique elements
+    let unique = [...new Set(this.arrayOfSides)];
+      if (unique.length > 2){
+        return false
+      } else {
+        return true
+      }
   }
 }
